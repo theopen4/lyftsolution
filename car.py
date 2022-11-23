@@ -1,6 +1,12 @@
-from abc import ABC
 from serviceable import Serviceable
 
-class Car(Serviceable, ABC):
-        """complete the with engine and battery class"""
+class Car(Serviceable):
+    def __init__(self,engine,battery):
+        self.engine = engine
+        self.battery = battery
+
+    def need_service(self):
+        return self.engine.need_service() or self.battery.need_service()
+
+        
 
